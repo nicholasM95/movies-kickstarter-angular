@@ -9,9 +9,18 @@ import {Movie} from '../interfaces/movie';
 export class MovieCardComponent {
 
   @Input() movie: Movie;
+  @Input() darkTheme = false;
   @Output() moreDetails: EventEmitter<Movie> = new EventEmitter<Movie>();
 
   handleClick() {
     this.moreDetails.emit(this.movie);
+  }
+
+  changeTheme() {
+    if (this.darkTheme) {
+      this.darkTheme = false;
+    } else {
+      this.darkTheme = true;
+    }
   }
 }

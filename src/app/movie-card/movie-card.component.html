@@ -1,26 +1,27 @@
-<div class="card">
+<div class="card" [class.dark-theme]="darkTheme">
   <div class="card-image">
     <figure class="image is-4by3">
-      <img [src]="movie.image" alt="Placeholder image">
+      <img [src]="movie.backdrop_path" alt="Placeholder image">
     </figure>
   </div>
   <div class="card-content">
     <div class="media">
       <div class="media-left">
         <figure class="image is-48x48">
-          <img [src]="movie.backdrop" alt="Placeholder image">
+          <img [src]="movie.poster_path" alt="Placeholder image">
         </figure>
       </div>
       <div class="media-content">
         <p class="title is-4">{{movie.title}}</p>
-        <p class="subtitle is-6">{{movie.releaseDate}}</p>
+        <p class="subtitle is-6">{{movie.release_date}}</p>
       </div>
     </div>
 
     <div class="content">
-      {{movie.details}}
+      <span class="text">{{movie.overview}}</span>
       <br>
     </div>
-    <button (click)="handleClick()">Meer</button>
+    <button (click)="handleClick()">Toon meer</button>
+    <button (click)="changeTheme()">{{darkTheme ? "Licht" : "Donker"}}</button>
   </div>
 </div>

@@ -1,2 +1,3 @@
-<app-movie-card [movie]="groteGeldroof" (moreDetails)="showMoreDetails($event)"></app-movie-card>
-<app-movie-card [movie]="deTunnel" (moreDetails)="showMoreDetails($event)"></app-movie-card>
+<app-movie-card *ngFor="let movie of (movies$| async).results"
+    [movie]="movie" (moreDetails)="showMoreDetails($event)">
+</app-movie-card>
