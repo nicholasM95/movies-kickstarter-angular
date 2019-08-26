@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sccs"
+              "src/styles.sccs",
+              "node_modules/bulma/css/bulma.min.css"
             ],
             "scripts": []
           },
