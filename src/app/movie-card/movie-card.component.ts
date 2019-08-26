@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Movie} from '../interfaces/movie';
 
 @Component({
@@ -9,5 +9,9 @@ import {Movie} from '../interfaces/movie';
 export class MovieCardComponent {
 
   @Input() movie: Movie;
+  @Output() moreDetails: EventEmitter<Movie> = new EventEmitter<Movie>();
 
+  handleClick() {
+    this.moreDetails.emit(this.movie);
+  }
 }
